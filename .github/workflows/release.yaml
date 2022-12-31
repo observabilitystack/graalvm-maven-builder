@@ -40,3 +40,5 @@ jobs:
           tags: |
             ghcr.io/${{ env.RELEASE_REPO }}:${{ env.GRAALVM_TAG }}
             ${{ env.RELEASE_REPO }}:${{ env.GRAALVM_TAG }}
+          build-args: |
+            GRAALVM_TAG=${{ env.GRAALVM_TAG }}
