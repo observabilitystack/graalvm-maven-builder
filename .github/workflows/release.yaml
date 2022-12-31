@@ -4,7 +4,6 @@ on:
 
 env:
   GRAALVM_TAG: ol9-java17-22.3.0
-  RELEASE_REPO: observabilitystack/graalvm-maven-builder
 
 jobs:
   release:
@@ -38,7 +37,7 @@ jobs:
           push: true
           platforms: linux/arm64, linux/amd64
           tags: |
-            ghcr.io/${{ env.RELEASE_REPO }}:${{ env.GRAALVM_TAG }}
-            ${{ env.RELEASE_REPO }}:${{ env.GRAALVM_TAG }}
+            ghcr.io/${{ github.repository }}:${{ env.GRAALVM_TAG }}
+            ${{ github.repository }}:${{ env.GRAALVM_TAG }}
           build-args: |
             GRAALVM_TAG=${{ env.GRAALVM_TAG }}
