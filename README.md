@@ -3,7 +3,7 @@
 A base image for multi-phase Docker builds targeting native Spring Boot 3.x
 images running on Alpine on both `amd64` and `aarch64` architectures.
 
-> This image is the builder image for Java applications in the
+> ♻️ This image is the builder image for Java applications in the
 > [observabilitystack](https://github.com/observabilitystack)
 > and [ping7io](https://github.com/ping7io) organization
 
@@ -24,7 +24,7 @@ COPY --from=builder "/build/target/application" /srv/application
 CMD exec /srv/application
 ```
 
-### Picking a runner image
+### 🏃‍♀️ Picking a runner image
 
 In the example above we used ` debian:bookworm-slim` as runner image.
 Use any glibc distro with glibc >= `2.34` as a runner image.
@@ -47,6 +47,6 @@ building a static executable runnable on Alpine Linux is currently
 As soon as GraalVM supports building static images using musl on arm64,
 this image will add the capability. Current work can be seen in `Dockerfile.musl`.
 
-## License
+## 📖 License
 
 This image is licensed under [MIT License](LICENSE)

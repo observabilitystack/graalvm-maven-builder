@@ -38,5 +38,5 @@ jobs:
           push: true
           platforms: linux/arm64, linux/amd64
           tags: |
-            ghcr.io/${env.RELEASE_REPO}:${{ env.GRAALVM_TAG }}
-            ${env.RELEASE_REPO}:${{ env.GRAALVM_TAG }}
+            ghcr.io/${{ env.RELEASE_REPO }}:${{ env.GRAALVM_TAG }}
+            ${{ env.RELEASE_REPO }}:${{ env.GRAALVM_TAG }}
