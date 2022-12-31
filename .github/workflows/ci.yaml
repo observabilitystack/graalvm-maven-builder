@@ -1,0 +1,25 @@
+name: continuous integration
+
+on:
+  push:
+    branches:
+      - main
+      - feature/**
+  pull_request:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        graalvm_tag: [ol9-java17-22.3.0]
+
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v3
+      - name: build Docker file
+        uses: docker/build-push-action@v3
+        with:
+          push: false
+          build-args: |
+            GRAALVM_TAG=${{ matrix.graalvm_tag }}
