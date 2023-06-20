@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 env:
-  GRAALVM_TAG: ol9-java17-22.3.0
+  GRAALVM_TAG: ol9-java17-22.3.2
 
 jobs:
   release:

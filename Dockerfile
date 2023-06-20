@@ -4,8 +4,8 @@ ARG GRAALVM_TAG
 FROM ghcr.io/graalvm/graalvm-ce:${GRAALVM_TAG}
 
 # Versions to install here
-ARG MAVEN_VERSION=3.8.7
-ARG UPX_VERSION=4.0.0
+ARG MAVEN_VERSION=3.9.2
+ARG UPX_VERSION=4.0.2
 
 # Install xz (for use with UPX) and other utilities
 RUN microdnf install -y xz jq zip \
