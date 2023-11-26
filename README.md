@@ -13,7 +13,7 @@ Use this builder image in your Java build stage.
 
 ```Dockerfile
 # build stage
-FROM ghcr.io/observabilitystack/graalvm-maven-builder:ol9-java17-22.3.0 AS builder
+FROM ghcr.io/observabilitystack/graalvm-maven-builder:21.0.1-ol9 AS builder
 RUN mvn -B native:compile -P native \
     --no-transfer-progress -DskipTests=true && \
     chmod +x /build/target/application
