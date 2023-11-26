@@ -11,14 +11,14 @@ jobs:
   build:
     strategy:
       matrix:
-        graalvm_tag: [ol9-java17-22.3.0]
+        graalvm_tag: [21.0.1-ol9, 21.0.1-muslib-ol9]
 
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: build Docker file
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           push: false
           build-args: |

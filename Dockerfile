@@ -1,11 +1,11 @@
 ARG GRAALVM_TAG
 
 # Set up a default build environment for our components
-FROM ghcr.io/graalvm/graalvm-ce:${GRAALVM_TAG}
+FROM ghcr.io/graalvm/native-image-community:${GRAALVM_TAG}
 
 # Versions to install here
-ARG MAVEN_VERSION=3.9.2
-ARG UPX_VERSION=4.0.2
+ARG MAVEN_VERSION=3.9.5
+ARG UPX_VERSION=4.2.1
 
 # Install xz (for use with UPX) and other utilities
 RUN microdnf install -y xz jq zip \
@@ -23,8 +23,6 @@ RUN MAVEN_BASE_URL="https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSIO
     && MAVEN_DOWNLOAD="/tmp/apache-maven.tar.gz" \
     && curl -s -o ${MAVEN_DOWNLOAD} ${MAVEN_BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
     && tar -xzf ${MAVEN_DOWNLOAD} -C ${MAVEN_HOME} --strip-components=1
-
-RUN gu install native-image
 
 # ---------------------------------------------------------------------
 # Linux compiler preparation

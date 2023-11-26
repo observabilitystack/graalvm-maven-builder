@@ -40,7 +40,17 @@ Examples are:
 This image strives to give you a easy image creation experience
 on both `aarch64` and `x86_64` architectures. Unfortunately,
 building a static executable runnable on Alpine Linux is currently
-[not supported by GraalVM](https://www.graalvm.org/latest/reference-manual/native-image/metadata/Compatibility/).
+[not supported by GraalVM](https://github.com/oracle/graal/blob/release/graal-vm/22.3/docs/reference-manual/native-image/Compatibility.md#limitations-on-linux-aarch64-architecture).
+
+## 📦 Building locally
+
+```shell
+GRAALVM_TAG=21.0.1-ol9
+GRAALVM_TAG=21.0.1-muslib-ol9
+docker build \
+    -t observabilitystack/graalvm-maven-builder:${GRAALVM_TAG} \
+    --build-arg GRAALVM_TAG=${GRAALVM_TAG} .
+```
 
 ## Future work
 
