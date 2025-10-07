@@ -11,7 +11,7 @@ jobs:
   build:
     strategy:
       matrix:
-        graalvm_tag: [21.0.1-ol9, 21.0.1-muslib-ol9, 22.0.1-ol9, 22.0.1-muslib-ol9]
+        graalvm_tag: [25.0.0-ol10] # 25.0.0-muslib-ol10
 
     runs-on: ubuntu-latest
     steps:
